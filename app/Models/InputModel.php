@@ -18,7 +18,6 @@ class InputModel extends Model
 
     public function datainput()
     {
-
         return $this->table('input_data')->findall();
     }
 

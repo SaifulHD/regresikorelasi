@@ -72,17 +72,21 @@ class Hasil extends BaseController
 
         $pearson = $hasilatas / $hasilbawah;
         $kd = $pearson * 100;
-        if ($pearson >= 0 && $pearson < 0.2) {
+        //klasifikasi pearson
+
+        //dd($pearson);
+        if (abs($pearson) >= 0 && abs($pearson) < 0.2) {
             $klasifikasi = "Sangat Lemah";
-        } else if ($pearson >= 0.2 && $pearson < 0.4) {
+        } else if (abs($pearson) >= 0.2 && abs($pearson) < 0.4) {
             $klasifikasi = "Lemah";
-        } else if ($pearson >= 0.4 && $pearson < 0.6) {
+        } else if (abs($pearson) >= 0.4 && abs($pearson) < 0.6) {
             $klasifikasi = "Sedang";
-        } else if ($pearson >= 0.6 && $pearson < 0.8) {
+        } else if (abs($pearson) >= 0.6 && abs($pearson) < 0.8) {
             $klasifikasi = "Kuat";
-        } else if ($pearson >= 0.8 && $pearson <= 1) {
+        } else if (abs($pearson) >= 0.8 && abs($pearson) < 1) {
             $klasifikasi = "Sangat Kuat";
         }
+
 
         if ($pearson < 0) {
             $hubungan = "Negatif yang berarti hubungan yang terbalik";
